@@ -8,11 +8,20 @@
         <div class="item">
             <img class="ui centered rounded image" src="<%= blog.image %>" >
         </div>
-        <div class="content">
+        <div class="content padding">
             <span><%= blog.created.toDateString() %></span>
         </div>
-        <div class="description">
+        <div class="description padding">
             <p><%= blog.body %></p>
         </div>
+        <div class="padding">
+            <a class="ui orange basic button" href="/blog/<%= blog._id %>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
+                <button class="ui red basic button" type="submit">Delete</button>
+            </form>
+        </div>
+        
     </div>
 </div>
+
+<% include  partials/footer %>
