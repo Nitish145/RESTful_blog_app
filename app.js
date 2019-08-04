@@ -71,7 +71,6 @@ app.get("/blogs/:id", function (req, res) {
 
 //EDIT ROUTE
 app.get("/blogs/:id/edit", function (req, res) {
-    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findById(req.params.id, function (err, foundBlog) {
         if (err) {
             res.redirect("/blogs");

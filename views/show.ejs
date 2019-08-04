@@ -15,7 +15,7 @@
             <p><%= blog.body %></p>
         </div>
         <div class="padding">
-            <a class="ui orange basic button" href="/blog/<%= blog._id %>/edit">Edit</a>
+            <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
             <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
                 <button class="ui red basic button" type="submit">Delete</button>
             </form>
