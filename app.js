@@ -5,7 +5,7 @@ var app = express();
 var expressSanitizer = require("express-sanitizer");
 var methodOverride = require("method-override");
 
-mongoose.connect("mongodb://localhost/restful_blog_app", 
+mongoose.connect("mongodb+srv://Nitish145:Aggarwals@123@blogs-3injf.mongodb.net/test?retryWrites=true&w=majority", 
     { 
         useNewUrlParser: true, 
         useFindAndModify: false 
@@ -103,6 +103,6 @@ app.delete("/blogs/:id", function (req, res) {
     })
 })
 
-app.listen(3000, function () {
-    console.log("Blog Server Started at PORT 3000");
+app.listen(process.env.PORT || 3000, function () {
+    console.log("Blog Server Started");
 })
